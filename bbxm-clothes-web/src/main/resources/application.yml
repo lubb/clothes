@@ -1,0 +1,25 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: clothes-web
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
+  mvc:
+    view:
+      prefix: /templates
+      suffix: .html
+
+dubbo:
+  application:
+    name: clothes-web
+  consumer:
+    version: clothes-lbb
+  registry:
+    address: zookeeper://119.29.128.59:2181
+  scan:
+    basePackages: com.lbb.clothes
+
+
+
