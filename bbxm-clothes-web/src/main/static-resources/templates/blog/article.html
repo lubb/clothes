@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title th:text="'兵兵博客-'+${tag}"></title>
+        <title>兵兵博客</title>
         <link rel="stylesheet" th:href="@{/index/js/layui/css/layui.css}">
         <link rel="stylesheet" th:href="@{/index/css/style.css}">
         <link rel="stylesheet" th:href="@{/index/css/index.css}">
@@ -47,7 +47,11 @@
                 <div class="tpt-con1">
                     <!--最新文章-->
                     <ul class="tpt-list">
-                        <h3 th:text="${tag}"></h3>
+                        <h3 th:switch="${type}">
+                            <span th:case="1">技术</span>
+                            <span th:case="2">生活</span>
+                            <span th:case="3">游戏</span>
+                        </h3>
                         <li class="tpt-list-li" th:each="article : ${list.list}">
                             <a th:href="@{'/detail/'+${article.id}}" target="_blank" class="tpt-list-avatar"><img th:src="@{'/index/images/'+${article.img}}"> </a>
                             <h2 class="tpt-tip"><a th:href="@{'/detail/'+${article.id}}" target="_blank" th:text="${article.title}"></a></h2>

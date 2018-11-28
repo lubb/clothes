@@ -86,14 +86,6 @@ public class IndexController {
      */
     @RequestMapping("article/{type}")
     public String article(String pageNum ,Model model, @PathVariable Integer type) {
-        String name = "";
-        if(type==1){
-            name ="技术";
-        }else if(type==2){
-            name = "生活";
-        }else{
-            name = "游戏";
-        }
         if(pageNum == null){
             pageNum="1";
         }
@@ -102,7 +94,6 @@ public class IndexController {
         PageInfo<Article> list = articleService.getArticlePage(articleVo);
         List<Article> articles = articleService.getArticleSix();
         model.addAttribute("articles", articles);
-        model.addAttribute("tag", name);
         model.addAttribute("list", list);
         model.addAttribute("type", type);
         return "blog/article";
