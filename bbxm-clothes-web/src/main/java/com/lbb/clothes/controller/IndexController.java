@@ -74,7 +74,7 @@ public class IndexController {
         model.addAttribute("articles", articles);
         model.addAttribute("tags", tags);
         model.addAttribute("article",articleService.getArticleById(id));
-        return "/blog/detail";
+        return "blog/detail";
     }
 
     /**
@@ -105,6 +105,6 @@ public class IndexController {
         model.addAttribute("tag", name);
         model.addAttribute("list", list);
         model.addAttribute("type", type);
-        return "/blog/article";
+        return "blog/article";
     }
 }
