@@ -15,7 +15,7 @@ dubbo:
   application:
     name: clothes-web
   consumer:
-    version: clothes-lbb
+    version: clothes-ximi
   registry:
     address: zookeeper://119.29.128.59:2181
   scan:

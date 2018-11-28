@@ -1,0 +1,53 @@
+.tpt-zan {width: 450px;height: 400px;}
+.tpt-zan h2 {font-size: 16px;font-weight: 100;color: #999;text-align: center;padding: 30px 0;}
+.tpt-zan h3 {font-size: 12px;font-weight: 100;color: #999;text-align: center;padding: 20px 0 0 0;}
+.tpt-zan .layui-tab-item {width: 140px;padding: 10px;border: 6px solid #EA5F00;margin: 0 auto;border-radius: 3px;height: 140px;}
+.tpt-zan .layui-tab-content {padding: 0 0 10px 0;text-align: center;}
+.tpt-zan .layui-tab-content p {font-size: 12px;font-weight: 100;color: #999;line-height: 38px;}
+.tpt-zan .layui-tab {margin: 0;text-align: none!important;}
+.tpt-zan .layui-tab-title li {line-height: 40px;min-width: 100px;padding:0;}
+.tpt-zan .layui-tab-title {border-bottom: 0px solid #ffffff;text-align: center;}
+.tpt-zan .layui-tab-title .layui-this:after {border: 0px solid #fff;}
+.tpt-zan .layui-tab-title .layui-this {}
+.tpt-zan .layui-tab-title .layui-this .zanbox {background: url(../images/radio1.jpg);}
+.tpt-zan .zanbox {width: 16px;height: 16px;background: url(../images/radio2.jpg);display: block;float: left;margin: 13px 15px 0 15px;}
+.tpt-tsearch{border-top:4px solid #4fc277}
+.tpt-tsearch form{position:relative;margin:20px 20px 0 20px;padding:0 10px;background:#fff}
+.tpt-tsearch input{height:40px;line-height:40px;border:0 solid #fff;background:#fff;font-size:12px;display:block;width:100%;color:#666}
+.tpt-tsearch button{cursor:pointer;position:absolute;right:10px;top:12px;border:0 solid #fff;color:#B5B5B5;background:#fff}
+.tpt-sidebar{background:#fafafa;margin:0 0 20px 0;padding-top:25px}
+.tpt-sidebar h3{font-size:20px;font-weight:400;padding:0 0 0 25px;border-left:4px solid #f63756;line-height:22px}
+.tpt-c li{float:left;line-height:30px;padding:20px 30px;border-bottom:1px solid #f0f0f0}
+.tpt-c li a{font-size:1pc;color:#333}
+.tpt-c li a:hover{color:red}
+.tpt-c li p{font-size:1pc;color:#999;margin-top:10px}
+.tpt-c li:last-child{border:none}
+.tpt-d li{padding:20px 30px;border-bottom:1px solid #f0f0f0}
+.tpt-d li div{height:155px;overflow:hidden;margin-bottom:10px}
+.tpt-d li p a{font-size:1pc;color:#444;font-weight:400;line-height:30px}
+.tpt-d li p a:hover{color:red}
+.tpt-d li img{width:100%;height:155px;-webkit-transition:all .6s}
+.tpt-d li:hover img{transform:scale(1.1,1.1)}
+.tpt-d li:last-child{border:none}
+.tpt-e{margin:20px 0 0 30px}
+.tpt-e li a{float:left;line-height:35px;font-size:1pc;height:35px;border:1px solid #f0f0f0;margin:0 20px 20px 0;padding:0 15px;color:#f1754f}
+.tpt-e li a:hover{background:#f1754f;border-color:#f97752;color:#fff}
+.tpt-f{padding:25px 10px 10px 30px}
+.tpt-f a{float:left;display:inline-block;height:26px;line-height:26px;padding:0 12px;margin:0 15px 15px 0;border:1px solid #E3E3E3;border-radius:28px;color:#666;font-size:12px;transition:.5s ease 0s}
+.tpt-f a:hover{color:#FA0807;border:1px solid #FA0807}
+.tpt-home{position:relative;padding:10px 10px 40px 0px;text-align:center}
+.tpt-home img{width:120px;height:120px;border-radius:100%}
+.tpt-home h1{font-size:26px;line-height:30px;margin-top:10px}
+.tpt-home h1 .icon-nan{font-size:22px;color:#4EBBF9}
+.tpt-home h1 .icon-nv{font-size:22px;color:#F581B1}
+.tpt-home-sign{color:#999;margin-top:10px}
+.tpt-home-info{color:#999;margin-top:10px}
+.tpt-home-info i{padding-right:5px;padding-left:10px;color:#666}
+.tpt-stat{background:#fafafa;margin-bottom:20px;padding:0 0 25px 0}
+.tpt-stat-list{width:100%;border-bottom:1px solid #f1f1f1;padding:20px 0}
+.tpt-stat-list li{float:left;text-align:center;width:33%;height:70px}
+.tpt-stat-list li a{width:100%;font-size:16px}
+.tpt-stat-list span{width:100%;display:inline-block;margin:10px 0 5px 0;font-size:22px}
+.tpt-grid-org{text-align:center}
+.tpt-grid-org h2{font-size:22px;color:#1499f8;margin:26px 0}
+.tpt-grid-org p{font-size:16px;color:#1499f8;margin:11px 0 30px 0}

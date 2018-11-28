@@ -17,7 +17,7 @@
         </commentGenerator>
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://47.106.234.27:3306/clothes" userId="root"
+                        connectionURL="jdbc:mysql://119.29.128.59:3306/clothes" userId="root"
                         password="bing123456">
         </jdbcConnection>
 
@@ -45,7 +45,7 @@
         </javaClientGenerator>
 
         <table schema="clothes" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false" tableName="xm_clothes" domainObjectName="Clothes">
+               selectByExampleQueryId="false" tableName="blog_user" domainObjectName="User">
         </table>
 
     </context>

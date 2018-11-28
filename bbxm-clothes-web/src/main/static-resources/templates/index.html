@@ -1,206 +1,159 @@
 <!doctype html >
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>兵兵西米</title>
-    <link type="text/css" rel="stylesheet" th:href="@{index/default.css}">
-    <script type="text/javascript" th:src="@{/index/jquery.min.js}"></script>
-    <script type="text/javascript" th:src="@{/index/jscex.min.js}"></script>
-    <script type="text/javascript" th:src="@{/index/jscex-parser.js}"></script>
-    <script type="text/javascript" th:src="@{/index/jscex-jit.js}"></script>
-    <script type="text/javascript" th:src="@{/index/jscex-builderbase.min.js}"></script>
-    <script type="text/javascript" th:src="@{/index/jscex-async.min.js}"></script>
-    <script type="text/javascript" th:src="@{/index/jscex-async-powerpack.min.js}"></script>
-    <script type="text/javascript" th:src="@{/index/functions.js}" charset="utf-8"></script>
-    <script type="text/javascript" th:src="@{/index/love.js}" charset="utf-8"></script>
-    <style type="text/css">
-        <!--
-        .STYLE1 {
-            color: #666666
-        }
-        -->
-    </style>
-</head>
-<body>
-<audio autoplay="autopaly">
-    <source th:src="@{/index/renxi.mp3}" type="audio/mp3" />
-</audio>
-<div id="main">
-    <div id="wrap">
-        <div id="text">
-            <div id="code"> <font color="#FF0000"> <span class="say">亲爱的小宝宝，我爱你</span><br>
-                <span class="say"> </span><br>
-                <span class="say"> 我知道我不会甜言蜜语，但是我会用行动证明一切</span><br>
-                <span class="say"><span class="space"></span>--爱你的兵兵--</span> </font>
-                </p>
-                <img th:src="@{/index/love.jpg}" style="width:260px;height:340px;">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>兵兵博客</title>
+        <link rel="stylesheet" th:href="@{/index/js/layui/css/layui.css}">
+        <link rel="stylesheet" th:href="@{/index/css/style.css}">
+        <link rel="stylesheet" th:href="@{/index/css/index.css}">
+        <link rel="stylesheet" th:href="@{/index/css/right.css}">
+        <script th:src="@{/index/js/push.js}"></script>
+        <script th:src="@{/index/js/hm.js}"></script>
+        <script th:src="@{/index/js/jquery-1.9.1.min.js}"></script>
+        <script th:src="@{/index/js/lanrenzhijia.js}"></script>
+        <script th:src="@{/index/js/layui/layui.js}"></script>
+        <link rel="stylesheet" th:href="@{/index/js/layui/css/layui.css}" media="all">
+    </head>
+    <body>
+        <div class="tpt-header">
+            <div class="tpt-wp cl">
+                <div class="tpt-logo">
+                    <a th:href="@{/}"><img th:src="@{/index/images/logo.png}" alt="兵兵博客"></a>
+                </div>
+                <input id="nav-btn" type="checkbox">
+                <label class="tpt-nav-btn" for="nav-btn"></label>
+                <ul class="tpt-nav">
+                    <li>
+                        <a class="tpt-nav-li" th:href="@{/}">首页</a>
+                        <ul class="tpt-nav-ul"></ul>
+                    </li>
+                    <li>
+                        <a class="tpt-nav-li" th:href="@{/article/1}">技术</a>
+                        <ul class="tpt-nav-ul"></ul>
+                    </li>
+                    <li>
+                        <a class="tpt-nav-li" th:href="@{/article/2}">生活</a>
+                        <ul class="tpt-nav-ul"></ul>
+                    </li>
+                    <li>
+                        <a class="tpt-nav-li" th:href="@{/article/3}">游戏</a>
+                        <ul class="tpt-nav-ul"></ul>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div id="clock-box"> <span class="STYLE1"></span><font color="#33CC00">亲爱的小宝宝，我喜欢你</font> <span class="STYLE1">已经是……</span>
-            <div id="clock"></div>
+        <div class="tpt-wp cl">
+            <div class="tpt-ml-7">
+                <div class="tpt-con1">
+                    <!--轮播-->
+                    <div class="tpt-banner tpt-none-768 cl">
+                        <div class="layui-carousel" id="banner" style="width: 100%; height: 320px;">
+                            <div carousel-item="">
+                                <div class="">
+                                    <a href="#"><img th:src="@{/index/images/lunbo1.jpg}" alt="兵兵博客"></a>
+                                </div>
+                                <div class="">
+                                    <a href="#"><img th:src="@{/index/images/lunbo2.jpg}" alt="兵兵博客"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            layui.use('carousel', function(){
+                                var carousel = layui.carousel;
+                                carousel.render({
+                                    elem: '#banner'
+                                    ,width: '100%'
+                                    ,height: '320px'
+                                    ,interval: 4000
+                                    ,arrow: 'always'
+                                });
+                            });
+                        </script>
+                    </div>
+                    <!--最新文章-->
+                    <ul class="tpt-list">
+                        <h3>最新文章</h3>
+                        <li class="tpt-list-li" th:each="article : ${list.list}">
+                            <a th:href="@{'/detail/'+${article.id}}" target="_blank" class="tpt-list-avatar"><img th:src="@{'/index/images/'+${article.img}}"> </a>
+                            <h2 class="tpt-tip"><a href="https://www.91boke.cn/it/1157.html" target="_blank" th:text="${article.title}"></a></h2>
+                            <p class="tpt-none-768" th:text="${article.description}"></p>
+                            <p>
+                                <span class="tpt-none-768" th:text="${#dates.format(article.createTime, 'yyyy-MM-dd HH:mm:ss')}"></span>
+                                浏览量:<span class="tpt-none-768" th:text="${article.clickNum}"></span>
+                            </p>
+                            <p style="padding-top: 0;line-height: 20px;">
+                                <span class="tpt-none-768 tpt-none-1024 tpt-none-1200 y" style="padding-right: 0;">标签:<a href="https://www.91boke.cn/tag/4.html" target="_blank" style="padding-left: 10px;" th:text="${article.tagName}"></a></span>
+                            </p>
+                        </li>
+                        <div id="demo0"></div>
+                        <input type="hidden" th:value="${list.total}" id="pageTotal"> <!-- 总条数 -->
+                        <input type="hidden" th:value="${list.pageNum}" id="page">　　<!-- 第几页 -->
+                        <script>
+                            layui.use(['laypage', 'layer'], function(){
+                                var laypage = layui.laypage
+                                    ,layer = layui.layer;
+                                laypage.render({
+                                    elem: 'demo0'
+                                    ,count: $("#pageTotal").val(),
+                                    curr:$("#page").val(),
+                                    jump:function (obj,first){
+                                        if(!first){
+                                            window.location.href="/index?pageNum="+obj.curr
+                                        }
+                                    }
+                                });
+                            })
+                        </script>
+                    </ul>
+                </div>
+            </div>
+            <div class="tpt-mr-3">
+                <div class="tpt-con2">
+                    <div class="tpt-sidebar cl">
+                        <h3>每日一语</h3>
+                        <div class="tpt-f cl" th:text="${quotation.name}"></div>
+                    </div>
+                    <div class="tpt-sidebar cl">
+                        <h3>博主介绍</h3>
+                        <div class="tpt-f cl">
+                            <p th:text="'姓名：'+${user.name}"></p>
+                            <p th:text="'gitHub：'+${user.github}"></p>
+                            <p th:text="'自我描述：'+${user.remark}"></p>
+                        </div>
+                    </div>
+                    <div class="tpt-sidebar cl">
+                        <h3>热门标签</h3>
+                        <div class="tpt-f cl">
+                            <span th:each="tag : ${tags}">
+                                <a href="https://www.91boke.cn/tag/1.html"  target="_blank" th:text="${tag.name}"></a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="tpt-sidebar cl">
+                        <h3>热门推荐</h3>
+                        <ul class="tpt-c cl">
+                            <li th:each="article : ${articles}">
+                                <a href="https://www.91boke.cn/game/1139.html" target="_blank" th:text="${article.title}"></a>
+                                <p th:text="${#dates.format(article.createTime, 'yyyy-MM-dd HH:mm:ss')}"></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-        <canvas id="canvas" width="1100" height="680"></canvas>
-    </div>
-</div>
-<script>
-</script>
-<script>
-    (function(){
-        var canvas = $('#canvas');
-
-        if (!canvas[0].getContext) {
-            $("#error").show();
-            return false;        }
-
-        var width = canvas.width();
-        var height = canvas.height();
-        canvas.attr("width", width);
-        canvas.attr("height", height);
-        var opts = {
-            seed: {
-                x: width / 2 - 20,
-                color: "rgb(190, 26, 37)",
-                scale: 2
-            },
-            branch: [
-                [535, 680, 570, 250, 500, 200, 30, 100, [
-                    [540, 500, 455, 417, 340, 400, 13, 100, [
-                        [450, 435, 434, 430, 394, 395, 2, 40]
-                    ]],
-                    [550, 445, 600, 356, 680, 345, 12, 100, [
-                        [578, 400, 648, 409, 661, 426, 3, 80]
-                    ]],
-                    [539, 281, 537, 248, 534, 217, 3, 40],
-                    [546, 397, 413, 247, 328, 244, 9, 80, [
-                        [427, 286, 383, 253, 371, 205, 2, 40],
-                        [498, 345, 435, 315, 395, 330, 4, 60]
-                    ]],
-                    [546, 357, 608, 252, 678, 221, 6, 100, [
-                        [590, 293, 646, 277, 648, 271, 2, 80]
-                    ]]
-                ]]
-            ],
-            bloom: {
-                num: 700,
-                width: 1080,
-                height: 650,
-            },
-            footer: {
-                width: 1200,
-                height: 5,
-                speed: 10,
-            }
-        }
-
-        var tree = new Tree(canvas[0], width, height, opts);
-        var seed = tree.seed;
-        var foot = tree.footer;
-        var hold = 1;
-
-        canvas.click(function(e) {
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            if (seed.hover(x, y)) {
-                hold = 0;
-                canvas.unbind("click");
-                canvas.unbind("mousemove");
-                canvas.removeClass('hand');
-            }
-        }).mousemove(function(e){
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            canvas.toggleClass('hand', seed.hover(x, y));
-        });
-
-        var seedAnimate = eval(Jscex.compile("async", function () {
-            seed.draw();
-            while (hold) {
-                $await(Jscex.Async.sleep(10));
-            }
-            while (seed.canScale()) {
-                seed.scale(0.95);
-                $await(Jscex.Async.sleep(10));
-            }
-            while (seed.canMove()) {
-                seed.move(0, 2);
-                foot.draw();
-                $await(Jscex.Async.sleep(10));
-            }
-        }));
-
-        var growAnimate = eval(Jscex.compile("async", function () {
-            do {
-                tree.grow();
-                $await(Jscex.Async.sleep(10));
-            } while (tree.canGrow());
-        }));
-
-        var flowAnimate = eval(Jscex.compile("async", function () {
-            do {
-                tree.flower(2);
-                $await(Jscex.Async.sleep(10));
-            } while (tree.canFlower());
-        }));
-
-        var moveAnimate = eval(Jscex.compile("async", function () {
-            tree.snapshot("p1", 240, 0, 610, 680);
-            while (tree.move("p1", 500, 0)) {
-                foot.draw();
-                $await(Jscex.Async.sleep(10));
-            }
-            foot.draw();
-            tree.snapshot("p2", 500, 0, 610, 680);
-
-            // 会有闪烁不得意这样做, (＞﹏＜)
-            canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
-            canvas.css("background", "#ffe");
-            $await(Jscex.Async.sleep(300));
-            canvas.css("background", "none");
-        }));
-
-        var jumpAnimate = eval(Jscex.compile("async", function () {
-            var ctx = tree.ctx;
-            while (true) {
-                tree.ctx.clearRect(0, 0, width, height);
-                tree.jump();
-                foot.draw();
-                $await(Jscex.Async.sleep(25));
-            }
-        }));
-
-        var textAnimate = eval(Jscex.compile("async", function () {
-            var together = new Date();
-            together.setFullYear(2016,12 , 21); 			//时间年月日
-            together.setHours(15);						//小时
-            together.setMinutes(0);					//分钟
-            together.setSeconds(0);					//秒前一位
-            together.setMilliseconds(2);				//秒第二位
-
-            $("#code").show().typewriter();
-            $("#clock-box").fadeIn(500);
-            while (true) {
-                timeElapse(together);
-                $await(Jscex.Async.sleep(1000));
-            }
-        }));
-
-        var runAsync = eval(Jscex.compile("async", function () {
-            $await(seedAnimate());
-            $await(growAnimate());
-            $await(flowAnimate());
-            $await(moveAnimate());
-
-            textAnimate().start();
-
-            $await(jumpAnimate());
-        }));
-
-        runAsync().start();
-    })();
-</script>
-
-
-</body>
+        <div class="tpt-footer footer tpt-mat-30 cl">
+            <div class="tpt-wp cl">
+                <div class="tpt-md-1">
+                    <div class="tpt-mds">
+                        <p class="bq"> Copyright © 2017-2018 <span class="pipe">|</span>
+                            <a class="banquan" target="_blank" href="http://www.miibeian.gov.cn/">备案号：苏ICP备17005056号-3</a><span class="pipe">|</span>
+                            <span class="tpt-none-768 tpt-none-1024">Powered by 91博客 <span class="pipe">|</span>
+                                <a href="https://www.91boke.cn/index/index.html" target="_blank"> 邮箱:hjy320829@163.com</a> <span class="pipe">|</span>
+                                <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2766654293&amp;site=qq&amp;menu=yes" target="_blank">QQ:2766654293</a> </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
