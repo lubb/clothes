@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>兵兵博客</title>
+        <title th:text="${article.title}"></title>
         <link rel="stylesheet" th:href="@{/index/js/layui/css/layui.css}">
         <link rel="stylesheet" th:href="@{/index/css/style.css}">
         <link rel="stylesheet" th:href="@{/index/css/thread.css}">
@@ -25,19 +25,19 @@
                 <label class="tpt-nav-btn" for="nav-btn"></label>
                 <ul class="tpt-nav">
                     <li>
-                        <a class="tpt-nav-li" href="https://www.91boke.cn/index/index.html">首页</a>
+                        <a class="tpt-nav-li" th:href="@{/}">首页</a>
                         <ul class="tpt-nav-ul"></ul>
                     </li>
                     <li>
-                        <a class="tpt-nav-li" href="https://www.91boke.cn/it.html">技术分享</a>
+                        <a class="tpt-nav-li" th:href="@{/article/1}">技术</a>
                         <ul class="tpt-nav-ul"></ul>
                     </li>
                     <li>
-                        <a class="tpt-nav-li" href="https://www.91boke.cn/news.html">科技资讯</a>
+                        <a class="tpt-nav-li" th:href="@{/article/2}">生活</a>
                         <ul class="tpt-nav-ul"></ul>
                     </li>
                     <li>
-                        <a class="tpt-nav-li" href="https://www.91boke.cn/game.html">游戏资讯</a>
+                        <a class="tpt-nav-li" th:href="@{/article/3}">游戏</a>
                         <ul class="tpt-nav-ul"></ul>
                     </li>
                 </ul>
@@ -48,11 +48,11 @@
                 <div class="tpt-con1">
                     <div class="content">
                         <div class="tpt-thread">
-                            <h1><a href="https://www.91boke.cn/it/1157.html" th:text="${article.title}"></a></h1>
+                            <h1><a href="#" th:text="${article.title}"></a></h1>
                             <div class="tpt-tip">
                                 <div class="tpt-list-hint">
                                     <i style="font-weight: bold;color: #ff0000;font-style:normal;">推荐标签：</i>
-                                    <span><a href="https://www.91boke.cn/tag/4.html" th:text="${article.tagName}"></a></span>
+                                    <span><a href="#" th:text="${article.tagName}"></a></span>
                                 </div>
                             </div>
 
@@ -69,7 +69,7 @@
                         <h3>热门标签</h3>
                         <div class="tpt-f cl">
                             <span th:each="tag : ${tags}">
-                                <a href="https://www.91boke.cn/tag/1.html"  target="_blank" th:text="${tag.name}"></a>
+                                <a href="#"  target="_blank" th:text="${tag.name}"></a>
                             </span>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
                         <h3>热门推荐</h3>
                         <ul class="tpt-c cl">
                             <li th:each="article : ${articles}">
-                                <a href="https://www.91boke.cn/game/1139.html" target="_blank" th:text="${article.title}"></a>
+                                <a th:href="@{'/detail/'+${article.id}}" target="_blank" th:text="${article.title}"></a>
                                 <p th:text="${#dates.format(article.createTime, 'yyyy-MM-dd HH:mm:ss')}"></p>
                             </li>
                         </ul>
@@ -90,10 +90,11 @@
                 <div class="tpt-md-1">
                     <div class="tpt-mds">
                         <p class="bq"> Copyright © 2017-2018 <span class="pipe">|</span>
-                            <a class="banquan" target="_blank" href="http://www.miibeian.gov.cn/">备案号：苏ICP备17005056号-3</a><span class="pipe">|</span>
-                            <span class="tpt-none-768 tpt-none-1024">Powered by 91博客 <span class="pipe">|</span>
-                                <a href="https://www.91boke.cn/index/index.html" target="_blank"> 邮箱:hjy320829@163.com</a> <span class="pipe">|</span>
-                                <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2766654293&amp;site=qq&amp;menu=yes" target="_blank">QQ:2766654293</a> </span>
+                            <a class="banquan" target="_blank" href="http://www.bbximi.com/">备案号：xxxxx</a><span class="pipe">|</span>
+                            <span class="tpt-none-768 tpt-none-1024">Powered by 兵兵博客 <span class="pipe">|</span>
+                                <a href="http://www.bbximi.com" target="_blank"> 邮箱:414107871@qq.com</a> <span class="pipe">|</span>
+                                <a href="http://www.bbximi.com" target="_blank">QQ:414107871</a>
+                            </span>
                         </p>
                     </div>
                 </div>

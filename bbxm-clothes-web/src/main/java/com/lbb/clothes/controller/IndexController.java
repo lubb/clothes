@@ -34,6 +34,13 @@ public class IndexController {
     @Reference
     private TagService tagService;
 
+    /**
+     * 首页
+     * @param pageNum
+     * @param model
+     * @param request
+     * @return
+     */
     @RequestMapping({"/", "/index"})
     public String index(String pageNum , Model model, HttpServletRequest request) {
         if(pageNum == null){
@@ -54,8 +61,14 @@ public class IndexController {
         return "index";
     }
 
-    @RequestMapping("/detail/{id}")
-    public String index(Model model, @PathVariable Long id) {
+    /**
+     * 文章详情
+     * @param model
+     * @param id
+     * @return
+     */
+    @RequestMapping("detail/{id}")
+    public String detail(Model model, @PathVariable Long id) {
         List<Article> articles = articleService.getArticleSix();
         List<Tag> tags = tagService.getAll();
         model.addAttribute("articles", articles);
@@ -64,8 +77,15 @@ public class IndexController {
         return "/blog/detail";
     }
 
-    @RequestMapping("/article/{type}")
-    public String index(String pageNum ,Model model, @PathVariable Integer type) {
+    /**
+     * 文章列表
+     * @param pageNum
+     * @param model
+     * @param type
+     * @return
+     */
+    @RequestMapping("article/{type}")
+    public String article(String pageNum ,Model model, @PathVariable Integer type) {
         String name = "";
         if(type==1){
             name ="技术";

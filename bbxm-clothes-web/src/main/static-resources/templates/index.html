@@ -75,7 +75,7 @@
                         <h3>最新文章</h3>
                         <li class="tpt-list-li" th:each="article : ${list.list}">
                             <a th:href="@{'/detail/'+${article.id}}" target="_blank" class="tpt-list-avatar"><img th:src="@{'/index/images/'+${article.img}}"> </a>
-                            <h2 class="tpt-tip"><a href="https://www.91boke.cn/it/1157.html" target="_blank" th:text="${article.title}"></a></h2>
+                            <h2 class="tpt-tip"><a th:href="@{'/detail/'+${article.id}}" target="_blank" th:text="${article.title}"></a></h2>
                             <p class="tpt-none-768" th:text="${article.description}"></p>
                             <p>
                                 <span class="tpt-none-768" th:text="${#dates.format(article.createTime, 'yyyy-MM-dd HH:mm:ss')}"></span>
@@ -125,7 +125,7 @@
                         <h3>热门标签</h3>
                         <div class="tpt-f cl">
                             <span th:each="tag : ${tags}">
-                                <a href="https://www.91boke.cn/tag/1.html"  target="_blank" th:text="${tag.name}"></a>
+                                <a href="#"  target="_blank" th:text="${tag.name}"></a>
                             </span>
                         </div>
                     </div>
@@ -133,7 +133,7 @@
                         <h3>热门推荐</h3>
                         <ul class="tpt-c cl">
                             <li th:each="article : ${articles}">
-                                <a href="https://www.91boke.cn/game/1139.html" target="_blank" th:text="${article.title}"></a>
+                                <a th:href="@{'/detail/'+${article.id}}" target="_blank" th:text="${article.title}"></a>
                                 <p th:text="${#dates.format(article.createTime, 'yyyy-MM-dd HH:mm:ss')}"></p>
                             </li>
                         </ul>
@@ -146,10 +146,11 @@
                 <div class="tpt-md-1">
                     <div class="tpt-mds">
                         <p class="bq"> Copyright © 2017-2018 <span class="pipe">|</span>
-                            <a class="banquan" target="_blank" href="http://www.miibeian.gov.cn/">备案号：苏ICP备17005056号-3</a><span class="pipe">|</span>
-                            <span class="tpt-none-768 tpt-none-1024">Powered by 91博客 <span class="pipe">|</span>
-                                <a href="https://www.91boke.cn/index/index.html" target="_blank"> 邮箱:hjy320829@163.com</a> <span class="pipe">|</span>
-                                <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2766654293&amp;site=qq&amp;menu=yes" target="_blank">QQ:2766654293</a> </span>
+                            <a class="banquan" target="_blank" href="http://www.bbximi.com/">备案号：xxxxx</a><span class="pipe">|</span>
+                            <span class="tpt-none-768 tpt-none-1024">Powered by 兵兵博客 <span class="pipe">|</span>
+                                <a href="http://www.bbximi.com" target="_blank"> 邮箱:414107871@qq.com</a> <span class="pipe">|</span>
+                                <a href="http://www.bbximi.com" target="_blank">QQ:414107871</a>
+                            </span>
                         </p>
                     </div>
                 </div>
