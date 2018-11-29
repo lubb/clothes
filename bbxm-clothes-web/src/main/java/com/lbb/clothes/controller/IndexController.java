@@ -70,10 +70,12 @@ public class IndexController {
     @RequestMapping("detail/{id}")
     public String detail(Model model, @PathVariable Long id) {
         List<Article> articles = articleService.getArticleSix();
+        Article article = articleService.getArticleById(id);
         List<Tag> tags = tagService.getAll();
         model.addAttribute("articles", articles);
         model.addAttribute("tags", tags);
-        model.addAttribute("article",articleService.getArticleById(id));
+        model.addAttribute("article",article);
+        articleService.updateArticle(article);
         return "blog/detail";
     }
 
@@ -97,5 +99,19 @@ public class IndexController {
         model.addAttribute("list", list);
         model.addAttribute("type", type);
         return "blog/article";
+    }
+
+    /**
+     * 文章新增跳转
+     * @param model
+     * @return
+     */
+    @RequestMapping("add")
+    public String add(Model model) {
+        List<Article> articles = articleService.getArticleSix();
+        List<Tag> tags = tagService.getAll();
+        model.addAttribute("articles", articles);
+        model.addAttribute("tags", tags);
+        return "blog/add";
     }
 }

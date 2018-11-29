@@ -16,4 +16,8 @@ public interface ArticleService {
     public List<Article> getArticleSix();
 
     public List<Map<String,Object>> getHotArticleTag();
+
+    void saveArticle(Article article);
+
+    void updateArticle(Article article);
 }

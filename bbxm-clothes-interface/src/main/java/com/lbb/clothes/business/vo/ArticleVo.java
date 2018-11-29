@@ -20,6 +20,8 @@ public class ArticleVo extends BaseGridInVo {
 
     private Integer clickNum;
 
+    private String remark;
+
     public Long getId() {
         return id;
     }
@@ -82,5 +84,13 @@ public class ArticleVo extends BaseGridInVo {
 
     public void setClickNum(Integer clickNum) {
         this.clickNum = clickNum;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
     }
 }

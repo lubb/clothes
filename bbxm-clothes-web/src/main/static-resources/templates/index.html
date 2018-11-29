@@ -43,6 +43,10 @@
                         <a class="tpt-nav-li" th:href="@{/article/3}">游戏</a>
                         <ul class="tpt-nav-ul"></ul>
                     </li>
+                    <li>
+                        <a class="tpt-nav-li" th:href="@{/add}">发布</a>
+                        <ul class="tpt-nav-ul"></ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -78,15 +82,15 @@
                     <ul class="tpt-list">
                         <h3>最新文章</h3>
                         <li class="tpt-list-li" th:each="article : ${list.list}">
-                            <a th:href="@{'/detail/'+${article.id}}" target="_blank" class="tpt-list-avatar"><img th:src="@{'/index/images/'+${article.img}}"> </a>
+                            <a th:href="@{'/detail/'+${article.id}}" target="_blank" class="tpt-list-avatar"><img th:src="@{'/images/'+${article.img}}"> </a>
                             <h2 class="tpt-tip"><a th:href="@{'/detail/'+${article.id}}" target="_blank" th:text="${article.title}"></a></h2>
-                            <p class="tpt-none-768" th:text="${article.description}"></p>
+                            <p class="tpt-none-768" th:text="${article.remark}"></p>
                             <p>
                                 <span class="tpt-none-768" th:text="${#dates.format(article.createTime, 'yyyy-MM-dd HH:mm:ss')}"></span>
                                 浏览量:<span class="tpt-none-768" th:text="${article.clickNum}"></span>
                             </p>
                             <p style="padding-top: 0;line-height: 20px;">
-                                <span class="tpt-none-768 tpt-none-1024 tpt-none-1200 y" style="padding-right: 0;">标签:<a href="https://www.91boke.cn/tag/4.html" target="_blank" style="padding-left: 10px;" th:text="${article.tagName}"></a></span>
+                                <span class="tpt-none-768 tpt-none-1024 tpt-none-1200 y" style="padding-right: 0;">标签:<a href="#" target="_blank" style="padding-left: 10px;" th:text="${article.tagName}"></a></span>
                             </p>
                         </li>
                         <div id="demo0"></div>
@@ -150,7 +154,7 @@
                 <div class="tpt-md-1">
                     <div class="tpt-mds">
                         <p class="bq"> Copyright © 2017-2018 <span class="pipe">|</span>
-                            <a class="banquan" target="_blank" href="http://www.bbximi.com/">备案号：xxxxx</a><span class="pipe">|</span>
+                            <a class="banquan" target="_blank" href="http://www.bbximi.com/">备案号：粤ICP备18147077号</a><span class="pipe">|</span>
                             <span class="tpt-none-768 tpt-none-1024">Powered by 兵兵博客 <span class="pipe">|</span>
                                 <a href="http://www.bbximi.com" target="_blank"> 邮箱:414107871@qq.com</a> <span class="pipe">|</span>
                                 <a href="http://www.bbximi.com" target="_blank">QQ:414107871</a>
