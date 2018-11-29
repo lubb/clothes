@@ -1,11 +1,7 @@
 package com.lbb.clothes.util;
 
-import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
 
 public class FileUtils {
 
@@ -26,14 +22,11 @@ public class FileUtils {
         }
         try {
             //保存文件
-            OutputStream outputStream = new FileOutputStream(dest);
-            IOUtils.copy(file.getInputStream(), outputStream);
+            file.transferTo(dest);
             return newFileName;
-        } catch (IllegalStateException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-            return null;
-        } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
             return null;
         }
 
