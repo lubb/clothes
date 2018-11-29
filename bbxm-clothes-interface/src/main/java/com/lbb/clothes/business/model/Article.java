@@ -56,7 +56,7 @@ public class Article implements Serializable {
      *
      * @mbg.generated
      */
-    private String description;
+    private byte[] description;
 
     /**
      *
@@ -214,7 +214,7 @@ public class Article implements Serializable {
      *
      * @mbg.generated
      */
-    public String getDescription() {
+    public byte[] getDescription() {
         return description;
     }
 
@@ -226,7 +226,7 @@ public class Article implements Serializable {
      *
      * @mbg.generated
      */
-    public void setDescription(String description) {
+    public void setDescription(byte[] description) {
         this.description = description;
     }
 

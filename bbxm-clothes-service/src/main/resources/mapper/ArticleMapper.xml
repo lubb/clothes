@@ -11,7 +11,7 @@
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="tag_id" jdbcType="BIGINT" property="tagId" />
     <result column="tag_name" jdbcType="VARCHAR" property="tagName" />
-    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="description" jdbcType="BLOB" property="description" />
     <result column="img" jdbcType="VARCHAR" property="img" />
     <result column="click_num" jdbcType="INTEGER" property="clickNum" />
     <result column="remark" jdbcType="VARCHAR" property="remark" />
@@ -50,7 +50,7 @@
       tag_id, tag_name, description, 
       img, click_num, remark)
     values (#{id,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
-      #{tagId,jdbcType=BIGINT}, #{tagName,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{tagId,jdbcType=BIGINT}, #{tagName,jdbcType=VARCHAR}, #{description,jdbcType=BLOB},
       #{img,jdbcType=VARCHAR}, #{clickNum,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR})
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.lbb.clothes.business.model.Article">
@@ -73,7 +73,7 @@
         tag_name = #{tagName,jdbcType=VARCHAR},
       </if>
       <if test="description != null">
-        description = #{description,jdbcType=VARCHAR},
+        description = #{description,jdbcType=BLOB},
       </if>
       <if test="img != null">
         img = #{img,jdbcType=VARCHAR},
@@ -97,7 +97,7 @@
       create_time = #{createTime,jdbcType=TIMESTAMP},
       tag_id = #{tagId,jdbcType=BIGINT},
       tag_name = #{tagName,jdbcType=VARCHAR},
-      description = #{description,jdbcType=VARCHAR},
+      description = #{description,jdbcType=BLOB},
       img = #{img,jdbcType=VARCHAR},
       click_num = #{clickNum,jdbcType=INTEGER},
       remark = #{remark,jdbcType=VARCHAR}

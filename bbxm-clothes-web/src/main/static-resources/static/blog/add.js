@@ -13,6 +13,13 @@ $(document).ready(function() {
         callbacks: {
             onImageUpload: function(files) {
                 sendFile(files[0]);
+            },
+            onPaste: function (ne) {
+                var bufferText = ((ne.originalEvent || ne).clipboardData || window.clipboardData).getData('Text/plain');
+                ne.preventDefault ? ne.preventDefault() : (ne.returnValue = false);
+                setTimeout(function () {
+                    document.execCommand("insertText", false, bufferText);
+                }, 10);
             }
         }
     });

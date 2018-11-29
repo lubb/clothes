@@ -18,6 +18,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.sql.rowset.serial.SerialBlob;
+import java.sql.Blob;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -60,7 +62,7 @@ public class ArticleController {
     public void save(@RequestBody JSONObject jsonObject){
         Article article = new Article();
         article.setTagId(jsonObject.getLong("tagId"));
-        article.setDescription(jsonObject.getString("description"));
+        article.setDescription(jsonObject.getString("description").getBytes());
         article.setTitle(jsonObject.getString("title"));
         article.setImg(jsonObject.getString("img"));
         article.setRemark(jsonObject.getString("remark"));

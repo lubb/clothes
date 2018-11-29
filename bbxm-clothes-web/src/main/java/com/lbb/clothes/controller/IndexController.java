@@ -75,6 +75,8 @@ public class IndexController {
         model.addAttribute("articles", articles);
         model.addAttribute("tags", tags);
         model.addAttribute("article",article);
+        String content = new String(article.getDescription());
+        model.addAttribute("content", content);
         articleService.updateArticle(article);
         return "blog/detail";
     }
