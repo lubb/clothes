@@ -127,7 +127,7 @@
                             <div class="intro"><img th:src="@{/index/images/memeber.gif}"><span th:text="${user.name}"></span></div>
                             <div class="intro"><img th:src="@{/index/images/msn.gif}"><a th:href="${user.github}" target="_blank"><span th:text="${user.github}"></span></a></div>
                             <div class="introduce"><img th:src="@{/index/images/myaccount.gif}"><span th:text="${user.remark}"></span></div>
-                            <div class="intro"><img th:src="@{/index/images/process.gif}"><span th:text="${time}"></span></div>
+                            <div class="intro"><img th:src="@{/index/images/process.gif}"><span th:text="${day}+'天'"></span><span th:text="${hour}+'小时'"></span><span th:text="${min}+'分钟'"></span></div>
                         </div>
                     </div>
                     <div class="tpt-sidebar cl">

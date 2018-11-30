@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class IndexController {
@@ -54,7 +55,10 @@ public class IndexController {
         User user = userService.getBlogUser();
         List<Tag> tags = tagService.getAll();
         commonDeal(model, articleVo);
-        model.addAttribute("time", DateUtil.DateDiff(new Date()));
+        Map<String,Long> map = DateUtil.DateDiff(new Date());
+        model.addAttribute("day", map.get("day"));
+        model.addAttribute("hour", map.get("hour"));
+        model.addAttribute("min", map.get("min"));
         model.addAttribute("tags", tags);
         model.addAttribute("quotation",quotation);
         model.addAttribute("user", user);
