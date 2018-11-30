@@ -55,7 +55,7 @@
                             <div class="tpt-tip">
                                 <div class="tpt-list-hint">
                                     <i style="font-weight: bold;color: #ff0000;font-style:normal;">推荐标签：</i>
-                                    <span><a href="#" th:text="${article.tagName}"></a></span>
+                                    <span><a href="#" target="_self" th:text="${article.tagName}"></a></span>
                                 </div>
                             </div>
 
@@ -72,7 +72,7 @@
                         <h3>热门标签</h3>
                         <div class="tpt-f cl">
                             <span th:each="tag : ${tags}">
-                                <a href="#"  target="_blank" th:text="${tag.name}"></a>
+                                <a href="#"  target="_self" th:text="${tag.name}"></a>
                             </span>
                         </div>
                     </div>
@@ -80,7 +80,7 @@
                         <h3>热门推荐</h3>
                         <ul class="tpt-c cl">
                             <li th:each="article : ${articles}">
-                                <a th:href="@{'/detail/'+${article.id}}" target="_blank" th:text="${article.title}"></a>
+                                <a th:href="@{'/detail/'+${article.id}}" target="_self" th:text="${article.title}"></a>
                                 <p th:text="${#dates.format(article.createTime, 'yyyy-MM-dd HH:mm:ss')}"></p>
                             </li>
                         </ul>

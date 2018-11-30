@@ -40,6 +40,11 @@ public class ArticleController {
     @Reference
     private ArticleService articleService;
 
+    /**
+     * 图片上传
+     * @param request
+     * @return
+     */
     @ResponseBody
     @RequestMapping("/upload")
     public JSONObject upload(HttpServletRequest request){
@@ -57,6 +62,10 @@ public class ArticleController {
         return jsonObject;
     }
 
+    /**
+     * 保存文章
+     * @param jsonObject
+     */
     @ResponseBody
     @RequestMapping("/save")
     public void save(@RequestBody JSONObject jsonObject){

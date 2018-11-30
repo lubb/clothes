@@ -102,7 +102,7 @@
                         <h3>热门标签</h3>
                         <div class="tpt-f cl">
                             <span th:each="tag : ${tags}">
-                                <a href="#"  target="_blank" th:text="${tag.name}"></a>
+                                <a href="#"  target="_self" th:text="${tag.name}"></a>
                             </span>
                         </div>
                     </div>

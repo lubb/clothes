@@ -22,6 +22,8 @@ public class ArticleVo extends BaseGridInVo {
 
     private String remark;
 
+    private Long categoryId;
+
     public Long getId() {
         return id;
     }
@@ -92,5 +94,13 @@ public class ArticleVo extends BaseGridInVo {
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    public Long getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
     }
 }

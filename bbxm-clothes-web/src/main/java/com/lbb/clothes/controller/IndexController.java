@@ -11,12 +11,14 @@ import com.lbb.clothes.business.service.QuotationService;
 import com.lbb.clothes.business.service.TagService;
 import com.lbb.clothes.business.service.UserService;
 import com.lbb.clothes.business.vo.ArticleVo;
+import com.lbb.clothes.util.DateUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -48,14 +50,12 @@ public class IndexController {
         }
         ArticleVo articleVo = new ArticleVo();
         articleVo.setPageNum(Integer.parseInt(pageNum));
-        PageInfo<Article> list = articleService.getArticlePage(articleVo);
-        List<Article> articles = articleService.getArticleSix();
         Quotation quotation = quotationService.getQuotationRand();
         User user = userService.getBlogUser();
         List<Tag> tags = tagService.getAll();
+        commonDeal(model, articleVo);
+        model.addAttribute("time", DateUtil.DateDiff(new Date()));
         model.addAttribute("tags", tags);
-        model.addAttribute("list", list);
-        model.addAttribute("articles", articles);
         model.addAttribute("quotation",quotation);
         model.addAttribute("user", user);
         return "index";
@@ -69,7 +69,7 @@ public class IndexController {
      */
     @RequestMapping("detail/{id}")
     public String detail(Model model, @PathVariable Long id) {
-        List<Article> articles = articleService.getArticleSix();
+        List<Article> articles = articleService.getArticleTwelve();
         Article article = articleService.getArticleById(id);
         List<Tag> tags = tagService.getAll();
         model.addAttribute("articles", articles);
@@ -95,10 +95,8 @@ public class IndexController {
         }
         ArticleVo articleVo = new ArticleVo();
         articleVo.setPageNum(Integer.parseInt(pageNum));
-        PageInfo<Article> list = articleService.getArticlePage(articleVo);
-        List<Article> articles = articleService.getArticleSix();
-        model.addAttribute("articles", articles);
-        model.addAttribute("list", list);
+        articleVo.setCategoryId(Long.parseLong(type.toString()));
+        commonDeal(model, articleVo);
         model.addAttribute("type", type);
         return "blog/article";
     }
@@ -110,10 +108,22 @@ public class IndexController {
      */
     @RequestMapping("add")
     public String add(Model model) {
-        List<Article> articles = articleService.getArticleSix();
+        List<Article> articles = articleService.getArticleTwelve();
         List<Tag> tags = tagService.getAll();
         model.addAttribute("articles", articles);
         model.addAttribute("tags", tags);
         return "blog/add";
+    }
+
+    /**
+     * 公共部分处理
+     * @param model
+     * @param articleVo
+     */
+    public void commonDeal(Model model, ArticleVo articleVo){
+        PageInfo<Article> list = articleService.getArticlePage(articleVo);
+        List<Article> articles = articleService.getArticleTwelve();
+        model.addAttribute("list", list);
+        model.addAttribute("articles", articles);
     }
 }

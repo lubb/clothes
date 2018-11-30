@@ -13,7 +13,7 @@ public interface ArticleService {
 
     public PageInfo<Article> getArticlePage(ArticleVo articleVo);
 
-    public List<Article> getArticleSix();
+    public List<Article> getArticleTwelve();
 
     public List<Map<String,Object>> getHotArticleTag();
 

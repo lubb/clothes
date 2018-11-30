@@ -51,5 +51,5 @@ public interface ArticleMapper {
 
     List<Map<String,Object>> getHotArticleTag();
 
-    List<Article> getArticleSix();
+    List<Article> getArticleTwelve();
 }

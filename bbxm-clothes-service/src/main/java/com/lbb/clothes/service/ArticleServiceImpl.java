@@ -27,11 +27,21 @@ public class ArticleServiceImpl implements ArticleService {
 
     private KeyCreater keyCreater = new KeyCreater();
 
+    /**
+     * 根据id获取文章信息
+     * @param id
+     * @return
+     */
     @Override
     public Article getArticleById(Long id) {
         return articleMapper.selectByPrimaryKey(id);
     }
 
+    /**
+     * 分页获取文章
+     * @param articleVo
+     * @return
+     */
     @Override
     public PageInfo<Article> getArticlePage(ArticleVo articleVo) {
         PageHelper.startPage(articleVo.getPageNum(),articleVo.getPageSize());
@@ -40,9 +50,13 @@ public class ArticleServiceImpl implements ArticleService {
         return pageInfo;
     }
 
+    /**
+     * 获取热门文章
+     * @return
+     */
     @Override
-    public List<Article> getArticleSix() {
-        return articleMapper.getArticleSix();
+    public List<Article> getArticleTwelve() {
+        return articleMapper.getArticleTwelve();
     }
 
     /**
@@ -54,6 +68,10 @@ public class ArticleServiceImpl implements ArticleService {
         return articleMapper.getHotArticleTag();
     }
 
+    /**
+     * 保存文章
+     * @param article
+     */
     @Override
     public void saveArticle(Article article) {
         Tag tag = tagMapper.selectByPrimaryKey(article.getTagId());
@@ -61,9 +79,14 @@ public class ArticleServiceImpl implements ArticleService {
         article.setClickNum(0);
         article.setCreateTime(new Date());
         article.setTagName(tag.getName());
+        article.setCategoryId(tag.getCategoryId());
         articleMapper.insert(article);
     }
 
+    /**
+     * 更新文章点击次数
+     * @param article
+     */
     @Override
     public void updateArticle(Article article) {
         Article a = new Article();
