@@ -8,8 +8,8 @@ $(document).ready(function() {
      * 编辑器
      */
     $('#summernote').summernote({
-        placeholder: 'hello',
-        height: 500,
+        placeholder: '输入内容',
+        height: 400,
         callbacks: {
             onImageUpload: function(files) {
                 sendFile(files[0]);

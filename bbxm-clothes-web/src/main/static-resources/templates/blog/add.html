@@ -12,16 +12,16 @@
         <link rel="stylesheet" th:href="@{/index/css/index.css}">
         <link rel="stylesheet" th:href="@{/index/css/right.css}">
         <link rel="stylesheet" th:href="@{/common/bootstrap-fileinput/css/fileinput.min.css}">
-        <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
-        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+        <link th:href="@{/common/summernote/summernote.css}" rel="stylesheet">
+        <link th:href="@{/common/bootstrap/css/bootstrap.css}" rel="stylesheet">
         <script th:src="@{/index/js/push.js}"></script>
         <script th:src="@{/index/js/hm.js}"></script>
         <script th:src="@{/index/js/jquery-1.9.1.min.js}"></script>
         <script th:src="@{/index/js/lanrenzhijia.js}"></script>
         <script th:src="@{/index/js/layui/layui.js}"></script>
         <script th:src="@{/blog/add.js}"></script>
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
-        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+        <script th:src="@{/common/summernote/summernote.js}"></script>
+        <script th:src="@{/common/bootstrap/js/bootstrap.js}"></script>
         <script th:src="@{/common/bootstrap-fileinput/js/fileinput.min.js}"></script>
         <link rel="stylesheet" th:href="@{/index/js/layui/css/layui.css}" media="all">
     </head>
@@ -29,7 +29,7 @@
         <div class="tpt-header">
             <div class="tpt-wp cl">
                 <div class="tpt-logo">
-                    <a href="https://www.91boke.cn/index/index.html"><img th:src="@{/index/images/logo.png}" alt="兵兵博客"></a>
+                    <a href="http://www.bbximi.com"><img th:src="@{/index/images/logo.png}" alt="兵兵博客"></a>
                 </div>
                 <input id="nav-btn" type="checkbox">
                 <label class="tpt-nav-btn" for="nav-btn"></label>
@@ -58,20 +58,20 @@
                 <div class="tpt-con1">
                     <form role="form">
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">标题:</label>
-                            <div class="col-sm-10">
+                            <label class="col-sm-1 control-label">标题:</label>
+                            <div class="col-sm-11">
                                 <input class="form-control input-sm title" type="text" placeholder="标题">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">副标题:</label>
-                            <div class="col-sm-10">
+                            <label class="col-sm-1 control-label">标题:</label>
+                            <div class="col-sm-11">
                                 <input class="form-control input-sm remark" type="text" placeholder="副标题">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">标签:</label>
-                            <div class="col-sm-10">
+                            <label class="col-sm-1 control-label">标签:</label>
+                            <div class="col-sm-11">
                                 <select name="tagId" class="tagId form-control">
                                     <option th:each="tag : ${tags}" th:value="${tag.id}">
                                         <span th:text="${tag.name}"></span>
@@ -80,19 +80,24 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">图片:</label>
-                            <div class="col-sm-10">
+                            <label class="col-sm-1 control-label">图片:</label>
+                            <div class="col-sm-11">
                                 <input type="file" name="uploadfile" id="uploadfile" class="file-loading" />
                                 <input type="hidden" name="img" class="img">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">内容:</label>
-                            <div class="col-sm-10">
+                            <label class="col-sm-1 control-label">内容:</label>
+                            <div class="col-sm-11">
                                 <div id="summernote"></div>
                             </div>
                         </div>
-                        <button type="button" class="addArticle btn btn-default">提交</button>
+                        <div class="form-group">
+                            <div class="col-sm-6"></div>
+                            <div class="col-sm-6">
+                                <button type="button" class="addArticle btn btn-default">发布</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
