@@ -94,4 +94,13 @@ public class ArticleServiceImpl implements ArticleService {
         a.setClickNum(article.getClickNum()+1);
         articleMapper.updateByPrimaryKeySelective(a);
     }
+
+    /**
+     * 更新内容
+     * @param article
+     */
+    @Override
+    public void updateArticleContent(Article article) {
+        articleMapper.updateByPrimaryKeySelective(article);
+    }
 }

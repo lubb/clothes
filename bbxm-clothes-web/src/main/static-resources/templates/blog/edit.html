@@ -1,0 +1,112 @@
+<!doctype html >
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="author" content="乐者无界">
+        <meta name="keywords" content="兵兵博客_乐者无界">
+        <meta name="description" content="乐者无界/兵兵博客、技术、生活、游戏">
+        <title>兵兵博客</title>
+        <link rel="stylesheet" th:href="@{/index/js/layui/css/layui.css}">
+        <link rel="stylesheet" th:href="@{/index/css/style.css}">
+        <link rel="stylesheet" th:href="@{/index/css/thread.css}">
+        <link rel="stylesheet" th:href="@{/index/css/index.css}">
+        <link rel="stylesheet" th:href="@{/index/css/right.css}">
+        <link th:href="@{/common/summernote/summernote.css}" rel="stylesheet">
+        <link th:href="@{/common/bootstrap/css/bootstrap.css}" rel="stylesheet">
+        <script th:src="@{/index/js/push.js}"></script>
+        <script th:src="@{/index/js/hm.js}"></script>
+        <script th:src="@{/index/js/jquery-1.9.1.min.js}"></script>
+        <script th:src="@{/index/js/lanrenzhijia.js}"></script>
+        <script th:src="@{/index/js/layui/layui.js}"></script>
+        <script th:src="@{/blog/edit.js}"></script>
+        <script th:src="@{/common/summernote/summernote.js}"></script>
+        <script th:src="@{/common/bootstrap/js/bootstrap.js}"></script>
+        <link rel="stylesheet" th:href="@{/index/js/layui/css/layui.css}" media="all">
+    </head>
+    <body>
+        <div class="tpt-header">
+            <div class="tpt-wp cl">
+                <div class="tpt-logo">
+                    <a href="http://www.bbximi.com"><img th:src="@{/index/images/logo.png}" alt="兵兵博客"></a>
+                </div>
+                <input id="nav-btn" type="checkbox">
+                <label class="tpt-nav-btn" for="nav-btn"></label>
+                <ul class="tpt-nav">
+                    <li>
+                        <a class="tpt-nav-li" th:href="@{/}">首页</a>
+                        <ul class="tpt-nav-ul"></ul>
+                    </li>
+                    <li>
+                        <a class="tpt-nav-li" th:href="@{/article/1}">技术</a>
+                        <ul class="tpt-nav-ul"></ul>
+                    </li>
+                    <li>
+                        <a class="tpt-nav-li" th:href="@{/article/2}">生活</a>
+                        <ul class="tpt-nav-ul"></ul>
+                    </li>
+                    <li>
+                        <a class="tpt-nav-li" th:href="@{/article/3}">游戏</a>
+                        <ul class="tpt-nav-ul"></ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tpt-wp cl">
+            <div class="tpt-ml-7">
+                <div class="tpt-con1">
+                    <form role="form">
+                        <div><input type="hidden" class="id" th:value="${id}"></div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label">内容:</label>
+                            <div class="col-sm-11">
+                                <div id="summernote"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-6"></div>
+                            <div class="col-sm-6">
+                                <button type="button" class="addArticle btn btn-default">更新</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="tpt-mr-3">
+                <div class="tpt-con2">
+                    <div class="tpt-sidebar cl">
+                        <h3>热门标签</h3>
+                        <div class="tpt-f cl">
+                            <span th:each="tag : ${tags}">
+                                <a href="#"  target="_self" th:text="${tag.name}"></a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="tpt-sidebar cl">
+                        <h3>热门推荐</h3>
+                        <ul class="tpt-c cl">
+                            <li th:each="article : ${articles}">
+                                <a th:href="@{'/detail/'+${article.id}}" target="_blank" th:text="${article.title}"></a>
+                                <p th:text="${#dates.format(article.createTime, 'yyyy-MM-dd HH:mm:ss')}"></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tpt-footer footer tpt-mat-30 cl">
+            <div class="tpt-wp cl">
+                <div class="tpt-md-1">
+                    <div class="tpt-mds">
+                        <p class="bq"> Copyright © 2017-2018 <span class="pipe">|</span>
+                            <a class="banquan" target="_blank" href="http://www.bbximi.com/">备案号：粤ICP备18147077号</a><span class="pipe">|</span>
+                            <span class="tpt-none-768 tpt-none-1024">Powered by 兵兵博客 <span class="pipe">|</span>
+                                <a href="http://www.bbximi.com" target="_blank"> 邮箱:414107871@qq.com</a> <span class="pipe">|</span>
+                                <a href="http://www.bbximi.com" target="_blank">QQ:414107871</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

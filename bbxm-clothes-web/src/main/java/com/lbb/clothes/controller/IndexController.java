@@ -86,6 +86,22 @@ public class IndexController {
     }
 
     /**
+     * 文章编辑
+     * @param model
+     * @param id
+     * @return
+     */
+    @RequestMapping("edit/{id}")
+    public String edit(Model model, @PathVariable Long id) {
+        List<Article> articles = articleService.getArticleTwelve();
+        List<Tag> tags = tagService.getAll();
+        model.addAttribute("articles", articles);
+        model.addAttribute("tags", tags);
+        model.addAttribute("id", id);
+        return "blog/edit";
+    }
+
+    /**
      * 文章列表
      * @param pageNum
      * @param model

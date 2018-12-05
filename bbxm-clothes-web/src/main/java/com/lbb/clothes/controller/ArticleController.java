@@ -3,6 +3,7 @@ package com.lbb.clothes.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.JSONObject;
 import com.lbb.clothes.business.model.Article;
+import com.lbb.clothes.business.model.Tag;
 import com.lbb.clothes.business.service.ArticleService;
 import com.lbb.clothes.util.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +23,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.sql.rowset.serial.SerialBlob;
 import java.sql.Blob;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -79,6 +82,19 @@ public class ArticleController {
     }
 
     /**
+     * 更新文章内容
+     * @param jsonObject
+     */
+    @ResponseBody
+    @RequestMapping("/update")
+    public void update(@RequestBody JSONObject jsonObject){
+        Article article = new Article();
+        article.setDescription(jsonObject.getString("description").getBytes());
+        article.setId(jsonObject.getLong("id"));
+        articleService.updateArticleContent(article);
+    }
+
+    /**
      * 预览方法
      * @param fileName
      * @return
@@ -87,5 +103,19 @@ public class ArticleController {
     @RequestMapping("/show/{fileName}")
     public ResponseEntity show(@PathVariable String fileName){
         return ResponseEntity.ok(resourceLoader.getResource("file:" + path + fileName));
+    }
+
+    /**
+     * 根据id获取文章信息
+     * @param jsonObject
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping("/getContentById")
+    public String getContentById(@RequestBody JSONObject jsonObject) {
+        Long id = jsonObject.getLong("id");
+        Article article = articleService.getArticleById(id);
+        String content = new String(article.getDescription());
+        return content;
     }
 }

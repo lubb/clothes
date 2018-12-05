@@ -68,7 +68,7 @@ $(document).ready(function() {
         }
         $.ajax({
             type: 'POST',
-            url: 'article/save' ,
+            url: '/article/save' ,
             dataType: 'text',
             contentType:'application/json;charset=UTF-8',
             data:JSON.stringify({'title':title,'description':content,'tagId':tagId,'img':img,'remark':remark}),  //提交json字符串数组，如果提交json字符串去掉[]
