@@ -67,7 +67,7 @@
                                 <span class="tpt-none-768 tpt-none-1024 tpt-none-1200 y" style="padding-right: 0;">标签:<a href="#" target="_self" style="padding-left: 10px;" th:text="${article.tagName}"></a></span>
                             </p>
                         </li>
-                        <div id="demo0"></div>
+                        <div id="demo0" style="text-align: center;"></div>
                         <input type="hidden" th:value="${list.total}" id="pageTotal"> <!-- 总条数 -->
                         <input type="hidden" th:value="${list.pageNum}" id="page">　　<!-- 第几页 -->
                         <input type="hidden" th:value="${type}" id="type">　　<!-- 第几页 -->
@@ -76,8 +76,9 @@
                                 var laypage = layui.laypage
                                     ,layer = layui.layer;
                                 laypage.render({
-                                    elem: 'demo0'
-                                    ,count: $("#pageTotal").val(),
+                                    elem: 'demo0',
+                                    count: $("#pageTotal").val(),
+                                    limit: 9,
                                     curr:$("#page").val(),
                                     jump:function (obj,first){
                                         if(!first){
