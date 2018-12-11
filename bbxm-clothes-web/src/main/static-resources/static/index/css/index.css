@@ -1,5 +1,5 @@
 /*�õ�*/
-.tpt-banner{margin-bottom:30px}
+.tpt-banner{margin-bottom:25px}
 .tpt-banner img {width: 100%;height:320px;}
 
 /*����*/
@@ -28,14 +28,14 @@
 /*�б�*/
 .tpt-list{padding:0;}
 .tpt-list h3 {font-size: 20px;font-weight: 400;line-height: 22px;margin: 0 0 30px 0;}
-.tpt-list-avatar {overflow: hidden;width: 240px;height: 160px;position:absolute;left:0;top:0}
-.tpt-list-avatar img{-webkit-transition: all .6s;width:240px;height:160px;border-radius:2px}
+.tpt-list-avatar {overflow: hidden;width: 200px;height: 100px;position:absolute;left:0;top:0}
+.tpt-list-avatar img{-webkit-transition: all .6s;width:200px;height:100px;border-radius:2px}
 .tpt-list-avatar:hover img{transform:scale(1.1,1.1)}
-.tpt-list-li{position:relative;height:160px;padding:0 0 25px 260px;margin-bottom:25px;border-bottom:1px solid #f0f0f0}
+.tpt-list-li{position:relative;height:100px;padding:0 0 15px 215px;margin-bottom:15px;border-bottom:1px solid #f0f0f0}
 .tpt-list-li h2{line-height:26px;padding-top:5px;width: 100%;}
 .tpt-list-li h2 a{font-size:18px;word-break: break-all;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;overflow: hidden;}
 .tpt-list-li h2 span{position:relative;top:3px;margin-left:5px}
-.tpt-list-li p{position:relative;line-height:26px;padding-top:15px;font-size:14px;color:#999}
+.tpt-list-li p{position:relative;line-height:25px;padding-top:5px;font-size:13px;color:#999}
 .tpt-list-li p span{padding-right:15px}
 .tpt-list-li p span a{color:#999}
 .tpt-list-li p .y a{color:#3CA5F6;font-size:12px}
@@ -47,6 +47,10 @@
     height:20px;
     margin-left: 25px;
     margin-top: 6px;
+}
+
+.b-intro{
+    padding-bottom: 10px;
 }
 
 .intro img{

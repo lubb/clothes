@@ -4,7 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="author" content="乐者无界">
         <meta name="keywords" th:content="${article.title}">
-        <meta name="description" content="乐者无界/兵兵博客、技术、生活、游戏">
+        <meta name="description" th:content="${article.title}">
         <title th:text="${article.title}"></title>
         <link rel="stylesheet" th:href="@{/index/js/layui/css/layui.css}">
         <link rel="stylesheet" th:href="@{/index/css/style.css}">
@@ -32,15 +32,15 @@
                         <ul class="tpt-nav-ul"></ul>
                     </li>
                     <li>
-                        <a class="tpt-nav-li" th:href="@{/article/1}">技术</a>
+                        <a class="tpt-nav-li" th:href="@{/article/1}">技术分享</a>
                         <ul class="tpt-nav-ul"></ul>
                     </li>
                     <li>
-                        <a class="tpt-nav-li" th:href="@{/article/2}">生活</a>
+                        <a class="tpt-nav-li" th:href="@{/article/2}">技术资讯</a>
                         <ul class="tpt-nav-ul"></ul>
                     </li>
                     <li>
-                        <a class="tpt-nav-li" th:href="@{/article/3}">游戏</a>
+                        <a class="tpt-nav-li" th:href="@{/article/3}">生活娱乐</a>
                         <ul class="tpt-nav-ul"></ul>
                     </li>
                 </ul>

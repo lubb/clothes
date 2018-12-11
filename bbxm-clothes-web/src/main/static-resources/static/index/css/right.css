@@ -15,12 +15,12 @@
 .tpt-tsearch form{position:relative;margin:20px 20px 0 20px;padding:0 10px;background:#fff}
 .tpt-tsearch input{height:40px;line-height:40px;border:0 solid #fff;background:#fff;font-size:12px;display:block;width:100%;color:#666}
 .tpt-tsearch button{cursor:pointer;position:absolute;right:10px;top:12px;border:0 solid #fff;color:#B5B5B5;background:#fff}
-.tpt-sidebar{background:#fafafa;margin:0 0 20px 0;padding-top:25px}
-.tpt-sidebar h3{font-size:20px;font-weight:400;padding:0 0 0 25px;border-left:4px solid #f63756;line-height:22px}
-.tpt-c li{float:left;line-height:30px;padding:20px 30px;border-bottom:1px solid #f0f0f0}
-.tpt-c li a{font-size:1pc;color:#333}
+.tpt-sidebar{background:#fafafa;margin:0 0 18px 0;padding-top:9px}
+.tpt-sidebar h3{font-size:16px;font-weight:400;padding:0 0 0 10px;border-left:4px solid #f63756;line-height:22px}
+.tpt-c li{float:left;line-height:17px;padding:16px 30px;border-bottom:1px solid #f0f0f0;width: 82%;}
+.tpt-c li a{font-size:14px;color:#333}
 .tpt-c li a:hover{color:red}
-.tpt-c li p{font-size:1pc;color:#999;margin-top:10px}
+.tpt-c li p{font-size:13px;color:#999;margin-top:10px}
 .tpt-c li:last-child{border:none}
 .tpt-d li{padding:20px 30px;border-bottom:1px solid #f0f0f0}
 .tpt-d li div{height:155px;overflow:hidden;margin-bottom:10px}
@@ -32,7 +32,7 @@
 .tpt-e{margin:20px 0 0 30px}
 .tpt-e li a{float:left;line-height:35px;font-size:1pc;height:35px;border:1px solid #f0f0f0;margin:0 20px 20px 0;padding:0 15px;color:#f1754f}
 .tpt-e li a:hover{background:#f1754f;border-color:#f97752;color:#fff}
-.tpt-f{padding:15px 10px 10px 30px}
+.tpt-f{padding:15px 10px 15px 30px;font-size: 14px;}
 .tpt-f a{float:left;display:inline-block;height:26px;line-height:26px;padding:0 12px;margin:0 15px 15px 0;border:1px solid #E3E3E3;border-radius:28px;color:#666;font-size:12px;transition:.5s ease 0s}
 .tpt-f a:hover{color:#FA0807;border:1px solid #FA0807}
 .tpt-home{position:relative;padding:10px 10px 40px 0px;text-align:center}
