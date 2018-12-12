@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -62,9 +63,11 @@ public class IndexController {
         model.addAttribute("tags", tags);
         model.addAttribute("quotation",quotation);
         model.addAttribute("user", user);
-        model.addAttribute("qq","http://connect.qq.com/widget/shareqq/index.html?url=http://www.bbximi.com&title=乐者无界&summary=兵兵博客&pics=http://www.bbximi.com/index/images/logo.png");
-        model.addAttribute("zone","http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.bbximi.com&title=乐者无界&summary=兵兵博客&pics=http://www.bbximi.com/index/images/logo.png");
-        model.addAttribute("weibo","http://service.weibo.com/share/mobile.php?url=http://www.bbximi.com&title=乐者无界&summary=兵兵博客&pic=http://www.bbximi.com/index/images/logo.png");
+        Map<String,String> m = new HashMap<>();
+        m.put("qq","http://connect.qq.com/widget/shareqq/index.html?url=http://www.bbximi.com&title=乐者无界&summary=兵兵博客&pics=http://www.bbximi.com/index/images/logo.png");
+        m.put("zone","http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.bbximi.com&title=乐者无界&summary=兵兵博客&pics=http://www.bbximi.com/index/images/logo.png");
+        m.put("weibo","http://service.weibo.com/share/mobile.php?url=http://www.bbximi.com&title=乐者无界&summary=兵兵博客&pic=http://www.bbximi.com/index/images/logo.png");
+        model.addAttribute("map", m);
         return "index";
     }
 
