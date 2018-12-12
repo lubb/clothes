@@ -15,7 +15,7 @@
 .tpt-tsearch form{position:relative;margin:20px 20px 0 20px;padding:0 10px;background:#fff}
 .tpt-tsearch input{height:40px;line-height:40px;border:0 solid #fff;background:#fff;font-size:12px;display:block;width:100%;color:#666}
 .tpt-tsearch button{cursor:pointer;position:absolute;right:10px;top:12px;border:0 solid #fff;color:#B5B5B5;background:#fff}
-.tpt-sidebar{background:#fafafa;margin:0 0 10px 0;padding-top:9px}
+.tpt-sidebar{background:#fafafa;margin:0 0 15px 0;padding-top:9px}
 .tpt-sidebar h3{font-size:16px;font-weight:400;padding:0 0 0 10px;border-left:4px solid #f63756;line-height:22px}
 .tpt-c li{float:left;line-height:17px;padding:16px 30px;border-bottom:1px solid #f0f0f0;width: 82%;}
 .tpt-c li a{font-size:14px;color:#333}
