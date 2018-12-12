@@ -6,6 +6,7 @@ spring:
   thymeleaf:
     cache: false
     mode: LEGACYHTML5
+    encoding: UTF-8
   mvc:
     view:
       prefix: /templates
