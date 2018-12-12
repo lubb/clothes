@@ -62,6 +62,9 @@ public class IndexController {
         model.addAttribute("tags", tags);
         model.addAttribute("quotation",quotation);
         model.addAttribute("user", user);
+        model.addAttribute("qq","http://connect.qq.com/widget/shareqq/index.html?url=http://www.bbximi.com&title=乐者无界&summary=兵兵博客&pics=http://www.bbximi.com/index/images/logo.png");
+        model.addAttribute("zone","http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.bbximi.com&title=乐者无界&summary=兵兵博客&pics=http://www.bbximi.com/index/images/logo.png");
+        model.addAttribute("weibo","http://service.weibo.com/share/mobile.php?url=http://www.bbximi.com&title=乐者无界&summary=兵兵博客&pic=http://www.bbximi.com/index/images/logo.png");
         return "index";
     }
 
@@ -81,6 +84,9 @@ public class IndexController {
         model.addAttribute("article",article);
         String content = new String(article.getDescription());
         model.addAttribute("content", content);
+        model.addAttribute("qq","http://connect.qq.com/widget/shareqq/index.html?url=http://www.bbximi.com/detail/"+article.getId()+"&title="+article.getTitle()+"&summary="+article.getRemark()+"&pics=http://www.bbximi.com/images/"+article.getImg()+"");
+        model.addAttribute("zone","http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.bbximi.com/detail/"+article.getId()+"&title="+article.getTitle()+"&summary="+article.getRemark()+"&pics=http://www.bbximi.com/images/"+article.getImg()+"");
+        model.addAttribute("weibo","http://service.weibo.com/share/mobile.php?url=http://www.bbximi.com/detail/"+article.getId()+"&title="+article.getTitle()+"&summary="+article.getRemark()+"&pic=http://www.bbximi.com/images/"+article.getImg()+"");
         articleService.updateArticle(article);
         return "blog/detail";
     }

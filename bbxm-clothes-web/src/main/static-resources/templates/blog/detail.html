@@ -16,6 +16,7 @@
         <script th:src="@{/index/js/jquery-1.9.1.min.js}"></script>
         <script th:src="@{/index/js/lanrenzhijia.js}"></script>
         <script th:src="@{/index/js/layui/layui.js}"></script>
+        <script th:src="@{/index/js/index.js}"></script>
         <link rel="stylesheet" th:href="@{/index/js/layui/css/layui.css}" media="all">
     </head>
     <body>
@@ -85,6 +86,15 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="tpt-sidebar cl">
+                        <h3>分享文章</h3>
+                        <div class="sidebar_share">
+                            <a rel="nofollow" class="share_weixin" onclick="share_wechat();" title="微信打赏">打赏</a>
+                            <a rel="nofollow" th:href="@{${qq}}" class="share_qq" target="_blank" title="分享到QQ">Q Q</a>
+                            <a rel="nofollow" th:href="@{${zone}}" class="share_qzone" target="_blank" title="分享到QQ空间">空间</a>
+                            <a rel="nofollow" th:href="@{${weibo}}" class="share_weibo" target="_blank" title="分享到微博">微博</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -101,6 +111,12 @@
                         </p>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div id="share_wechat">
+            <div style="position:fixed;border-radius:3px;left:50%;top:50%;z-index:100;width:260px;margin-left:-140px;margin-top:-200px;background:#fff;padding:20px 25px 15px 25px;text-align:center">
+                <span title="关闭" onclick="share_wechat()" style="width:100%;font-size:14px;color:#333;cursor:pointer;margin-bottom:10px;float:right;text-align:right">关闭</span>
+                <img th:src="@{/index/images/wx.png}" width="220"><p style="text-align:center;font-size:16px">打赏博主</p>
             </div>
         </div>
     </body>

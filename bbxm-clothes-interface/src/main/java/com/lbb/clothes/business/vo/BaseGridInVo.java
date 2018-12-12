@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class BaseGridInVo implements Serializable {
 
-    private Integer pageSize = 9;
+    private Integer pageSize = 10;
     private Integer pageNum = 1;
 
     public Integer getPageSize() {
