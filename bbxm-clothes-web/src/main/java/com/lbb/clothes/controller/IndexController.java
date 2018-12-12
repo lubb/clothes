@@ -64,9 +64,9 @@ public class IndexController {
         model.addAttribute("quotation",quotation);
         model.addAttribute("user", user);
         Map<String,String> m = new HashMap<>();
-        m.put("qq","http://connect.qq.com/widget/shareqq/index.html?url=http://www.bbximi.com&title=乐者无界&summary=兵兵博客&pics=http://www.bbximi.com/index/images/logo.png");
-        m.put("zone","http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.bbximi.com&title=乐者无界&summary=兵兵博客&pics=http://www.bbximi.com/index/images/logo.png");
-        m.put("weibo","http://service.weibo.com/share/mobile.php?url=http://www.bbximi.com&title=乐者无界&summary=兵兵博客&pic=http://www.bbximi.com/index/images/logo.png");
+        m.put("qq","http://connect.qq.com/widget/shareqq/index.html?url=http://www.bbximi.com&title=happy is boundless&summary=bbxm blog&pics=http://www.bbximi.com/index/images/logo.png");
+        m.put("zone","http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.bbximi.com&title=happy is boundless&summary=bbxm blog&pics=http://www.bbximi.com/index/images/logo.png");
+        m.put("weibo","http://service.weibo.com/share/mobile.php?url=http://www.bbximi.com&title=happy is boundless&summary=bbxm blog&pic=http://www.bbximi.com/index/images/logo.png");
         model.addAttribute("map", m);
         return "index";
     }
